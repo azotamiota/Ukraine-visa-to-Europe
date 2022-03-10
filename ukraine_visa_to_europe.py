@@ -2,7 +2,7 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as PathEffects
-from matplotlib.font_manager import FontProperties
+
 
 # For testing purposes in PyCharm
 pd.set_option('display.max_rows', 500)
@@ -22,10 +22,9 @@ def draw_plot():
 
     # Import data of min wages 2016-2021
     df = pd.read_csv('ukraine-visa-requirements.csv', encoding='latin1')
-    print(df)
 
     # Load base map
-    world = gpd.read_file('ne_10m_admin_0_countries')
+    world = gpd.read_file('https://azotamiota.github.io/miscellaneous/ne_10m_admin_0_countries/')
 
     # Set better projection
     world = world.to_crs(epsg=3035)
